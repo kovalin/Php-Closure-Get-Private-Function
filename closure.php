@@ -4,12 +4,12 @@ class Dog {
     private $sex = 'male';
 }
 
-$dogs_bark = function(Dog $dog){
+$dog_sex = function(Dog $dog){
     return $dog->sex;
 };
 
 $dog = new Dog;
 
-$dogs_bark = Closure::bind($dogs_bark, null, $dog);
+$dog_sex = Closure::bind($dog_sex, null, $dog);
 
-echo $dogs_bark($dog);
+echo $dog_sex($dog);
